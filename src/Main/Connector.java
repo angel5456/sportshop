@@ -24,7 +24,7 @@ public class Connector {
             user = "jefe";
             pass = "123";
             conn = DriverManager.getConnection(url,user,pass);
-            JOptionPane.showMessageDialog(null, "Conexion establecida");
+            //JOptionPane.showMessageDialog(null, "Conexion establecida");
             return conn;
         } catch (ClassNotFoundException | SQLException ex) {
             JOptionPane.showMessageDialog(null, ex);

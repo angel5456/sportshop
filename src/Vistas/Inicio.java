@@ -174,7 +174,7 @@ public class Inicio extends javax.swing.JFrame {
         //sentencia SQL para verificar si el usuario exite o no en la BD.
         try {
             connection = Connector.ConnectDb();
-            String query = "SELECT *FROM usuarios WWHERE username = ? AND password = ?";
+            String query = "SELECT *FROM usuarios WHERE nombre = ? AND password = ?";
             ps = connection.prepareStatement(query);
             ps.setString(1, txtusuario.getText());
             ps.setString(2, txtpassword.getText());
@@ -184,7 +184,7 @@ public class Inicio extends javax.swing.JFrame {
                 controlTienda cTienda = new controlTienda();
                 cTienda.setVisible(true);
                 username = user;
-                controlTienda.username = username;
+                //controlTienda.username = username;
                 JOptionPane.showMessageDialog(null, "Inico de sesion exitoso!", "Bienvenido " + user, JOptionPane.INFORMATION_MESSAGE);
                 dispose();
                 connection.close();

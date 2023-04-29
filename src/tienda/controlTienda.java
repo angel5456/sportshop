@@ -1,19 +1,24 @@
 package tienda;
 
-import Vistas.Inicio;
+import reportes.reporte1;
+import reportes.reporte2;
+import reportes.reporte3;
 
 /**
  *
  * @author LENOVO
  */
 public class controlTienda extends javax.swing.JFrame {
-
-    String username;
-    Inicio inicio = new Inicio();
     
     
     public controlTienda() {
         initComponents();
+        
+        this.setTitle("Control Tienda");
+        /* Esta instruccion se encarga de abrir la interfaz en medio*/
+        this.setLocationRelativeTo(null);
+        /*Esta instruccion evita que maximizen la pestaña de la interfaz*/
+        setResizable(false);
     }
 
     /**
@@ -26,30 +31,218 @@ public class controlTienda extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        txt1 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        btnempleado = new javax.swing.JButton();
+        btncliente = new javax.swing.JButton();
+        btnproveedor = new javax.swing.JButton();
+        btnproducto = new javax.swing.JButton();
+        btnticket = new javax.swing.JButton();
+        btncopias = new javax.swing.JButton();
+        jPanel3 = new javax.swing.JPanel();
+        btngenerar1 = new javax.swing.JButton();
+        txtgenerar = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        btngenerar2 = new javax.swing.JButton();
+        btngenerar3 = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(0, 0, 0));
         jPanel1.setForeground(new java.awt.Color(255, 255, 255));
 
-        txt1.setText("Empleados");
+        jPanel2.setBackground(new java.awt.Color(51, 51, 51));
+
+        btnempleado.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        btnempleado.setText("Empleado");
+        btnempleado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnempleadoActionPerformed(evt);
+            }
+        });
+
+        btncliente.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        btncliente.setText("Cliente");
+        btncliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnclienteActionPerformed(evt);
+            }
+        });
+
+        btnproveedor.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        btnproveedor.setText("Proveedor");
+        btnproveedor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnproveedorActionPerformed(evt);
+            }
+        });
+
+        btnproducto.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        btnproducto.setText("Producto");
+        btnproducto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnproductoActionPerformed(evt);
+            }
+        });
+
+        btnticket.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        btnticket.setText("Ticket");
+        btnticket.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnticketActionPerformed(evt);
+            }
+        });
+
+        btncopias.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        btncopias.setText("Copias");
+        btncopias.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btncopiasActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnempleado)
+                    .addComponent(btncliente)
+                    .addComponent(btnproveedor))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 73, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnproducto)
+                    .addComponent(btnticket)
+                    .addComponent(btncopias))
+                .addContainerGap())
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnempleado)
+                    .addComponent(btnproducto))
+                .addGap(85, 85, 85)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btncliente)
+                    .addComponent(btnticket))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnproveedor)
+                    .addComponent(btncopias))
+                .addContainerGap())
+        );
+
+        jPanel3.setBackground(new java.awt.Color(51, 51, 51));
+
+        btngenerar1.setText("Generar");
+        btngenerar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btngenerar1ActionPerformed(evt);
+            }
+        });
+
+        txtgenerar.setBackground(new java.awt.Color(51, 51, 51));
+        txtgenerar.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        txtgenerar.setForeground(new java.awt.Color(255, 255, 255));
+        txtgenerar.setText("Empleados segun la direccion");
+
+        jLabel1.setBackground(new java.awt.Color(51, 51, 51));
+        jLabel1.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("Lista de precios de los productos");
+
+        jLabel2.setBackground(new java.awt.Color(51, 51, 51));
+        jLabel2.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("Total invertido en la tienda");
+
+        btngenerar2.setText("Generar");
+        btngenerar2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btngenerar2ActionPerformed(evt);
+            }
+        });
+
+        btngenerar3.setText("Generar");
+        btngenerar3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btngenerar3ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(txtgenerar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(btngenerar1, javax.swing.GroupLayout.Alignment.LEADING))
+                            .addComponent(btngenerar2)
+                            .addComponent(btngenerar3))
+                        .addGap(0, 22, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(txtgenerar, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(btngenerar1)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(btngenerar2)
+                .addGap(26, 26, 26)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(btngenerar3)
+                .addContainerGap(13, Short.MAX_VALUE))
+        );
+
+        jLabel4.setFont(new java.awt.Font("Freestyle Script", 0, 80)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setText("Administracion de la tienda");
+        jLabel4.setToolTipText("");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(261, 261, 261)
-                .addComponent(txt1)
-                .addContainerGap(295, Short.MAX_VALUE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(37, 37, 37)
+                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(71, 71, 71)
+                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 553, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(20, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(txt1)
-                .addContainerGap(333, Short.MAX_VALUE))
+                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(26, 26, 26)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(21, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -65,6 +258,60 @@ public class controlTienda extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btncopiasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncopiasActionPerformed
+        copias cop = new copias();
+        cop.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btncopiasActionPerformed
+
+    private void btnclienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnclienteActionPerformed
+        cliente client = new cliente();
+        client.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btnclienteActionPerformed
+
+    private void btnticketActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnticketActionPerformed
+        ticket tick = new ticket();
+        tick.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btnticketActionPerformed
+
+    private void btngenerar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btngenerar1ActionPerformed
+        reporte1 report = new reporte1();
+        report.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btngenerar1ActionPerformed
+
+    private void btngenerar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btngenerar2ActionPerformed
+        reporte2 report = new reporte2();
+        report.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btngenerar2ActionPerformed
+
+    private void btngenerar3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btngenerar3ActionPerformed
+        reporte3 report = new reporte3();
+        report.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btngenerar3ActionPerformed
+
+    private void btnempleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnempleadoActionPerformed
+        empleado emp = new empleado();
+        emp.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btnempleadoActionPerformed
+
+    private void btnproveedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnproveedorActionPerformed
+        proveedor prov = new proveedor();
+        prov.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btnproveedorActionPerformed
+
+    private void btnproductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnproductoActionPerformed
+        producto prod = new producto();
+        prod.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btnproductoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -102,7 +349,21 @@ public class controlTienda extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btncliente;
+    private javax.swing.JButton btncopias;
+    private javax.swing.JButton btnempleado;
+    private javax.swing.JButton btngenerar1;
+    private javax.swing.JButton btngenerar2;
+    private javax.swing.JButton btngenerar3;
+    private javax.swing.JButton btnproducto;
+    private javax.swing.JButton btnproveedor;
+    private javax.swing.JButton btnticket;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JLabel txt1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JLabel txtgenerar;
     // End of variables declaration//GEN-END:variables
 }
